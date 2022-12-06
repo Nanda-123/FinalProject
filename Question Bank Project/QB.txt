@@ -1,0 +1,23 @@
+CREATE TABLE [dbo].[QuestionTbl] (
+    [QuestionId]  INT           IDENTITY (1, 1) NOT NULL,
+    [Question]    VARCHAR (MAX) NOT NULL,
+    [Keyword]     VARCHAR (MAX) NOT NULL,
+    [SubjectType] INT           NOT NULL,
+    [Option1]     VARCHAR (MAX) NULL,
+    [Option2]     VARCHAR (MAX) NULL,
+    [Option3]     VARCHAR (MAX) NULL,
+    [Option4]     VARCHAR (MAX) NULL,
+    [Answer]      VARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([QuestionId] ASC),
+    CONSTRAINT [FK_Question_Table1_SubjectTbl] FOREIGN KEY ([SubjectType]) REFERENCES [dbo].[SubjectTbl] ([SubjectId])
+);
+
+
+CREATE TABLE [dbo].[SubjectTbl] (
+    [SubjectId] INT           IDENTITY (1, 1) NOT NULL,
+    [Subject]    NVARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_Table] PRIMARY KEY CLUSTERED ([SubjectId] ASC),
+    UNIQUE NONCLUSTERED ([SubjectId] ASC)
+);
+
+
