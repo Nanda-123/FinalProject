@@ -1,0 +1,36 @@
+﻿@model NandaQuestionBank.Models.Question_Table1
+
+@{
+    ViewBag.Title = "Add";
+    var data = ViewBag.SubjectType as List<SelectListItem>;
+}
+
+<div>
+    <h2 style="text-align:center;color:brown">Add Question</h2>
+</div>
+<div class="container">
+    @using (Html.BeginForm())
+    {
+    <div class="row">
+        <label>Enter the Question</label><br />
+        @Html.EditorFor(m => m.Question)<br />
+        <label>Enter the Keyword of questions</label>
+        @Html.EditorFor(m => m.Keyword)<br />
+        <label>Enter the Subject Type</label>
+        @Html.DropDownListFor(m => m.SubjectType, data)<br />
+        <label>Enter the Option1</label><br />
+        @Html.EditorFor(m => m.Option1)<br />
+        <label>Enter the Option2</label><br />
+        @Html.EditorFor(m => m.Option2)<br />
+        <label>Enter the Option3</label><br />
+        @Html.EditorFor(m => m.Option3)<br />
+        <label>Enter the Option4</label><br />
+        @Html.EditorFor(m => m.Option4)<br />
+        <label>Enter the Answer</label><br />
+        @Html.EditorFor(m => m.Answer)<br />
+        <button class="btn btn-danger mt-3">Add Questions</button>
+    </div>
+    }
+</div>
+
+
