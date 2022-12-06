@@ -1,0 +1,39 @@
+﻿@model Travel_Blog_App.Models.BlogTbl
+
+
+@{
+    ViewBag.Title = "AddNew";
+}
+
+<div>
+    <h2>Post UR Blog Here!!!</h2>
+    <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(m => m.UserId)
+        <p>
+            Enter the Title: @Html.EditorFor(m => m.Title)
+        </p>
+        <p>
+            Enter the Message: @Html.EditorFor(m => m.Messages)
+        </p>
+        <p>
+            Enter the Details: @Html.EditorFor(m => m.Details)
+        </p>
+
+        <p>
+            Enter the image: @Html.EditorFor(m => m.Images)
+        </p>
+        <p>
+            Enter the UserId: @Html.EditorFor(m => m.UserId)
+        </p>
+        <p>
+            Enter the Date:
+            @Html.EditorFor(model => model.TravelDate)
+
+        </p>
+        <button>Save Changes</button>
+    }
+</div>
+
+
